@@ -9,8 +9,8 @@ export async function POST(request) {
     if (image) {
       prompt = `Analyze this image and respond to: ${message}`;
     }
-
-    const response = await fetch("http://localhost:11434/api/generate", {
+    
+    const response = await fetch(`${process.env.OLLAMA_BASEURL}/api/generate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
