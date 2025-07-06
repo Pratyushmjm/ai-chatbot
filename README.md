@@ -79,5 +79,32 @@ Run npm run dev
 Open http://localhost:3000
 Start chatting!
 
+ Ngrok Setup for Local Ollama Integration
+To connect the locally running Ollama model with the deployed Next.js frontend, Ngrok was used as a tunneling service.
+
+Steps followed:
+
+Install Ngrok (via Chocolatey on Windows):
+
+bash
+Copy
+Edit
+choco install ngrok
+Start Ngrok on the Ollama backend port (e.g., 11434):
+
+bash
+Copy
+Edit
+ngrok http 11434
+Use the generated public URL from Ngrok and forward it to the API route in Next.js.
+
+Update environment variables in the deployed Next.js app (e.g., on Vercel) to point to the Ngrok URL:
+
+ini
+Copy
+Edit
+OLLAMA_API_URL=https://your-ngrok-url.ngrok.io
+This allowed the deployed frontend (Vercel) to communicate with the locally running Ollama model for LLM inference.
+
 ![image](https://github.com/user-attachments/assets/9d6293f7-4d5a-4b0f-9377-eb06d3612852)
 
