@@ -78,3 +78,6 @@ Run ollama run gemma3
 Run npm run dev
 Open http://localhost:3000
 Start chatting!
+
+![image](https://github.com/user-attachments/assets/9d6293f7-4d5a-4b0f-9377-eb06d3612852)
+
